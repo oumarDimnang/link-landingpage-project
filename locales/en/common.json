@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "features": "Features",
+    "benefits": "Benefits",
+    "methodology": "Methodology",
+    "team": "Team",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "AI-Driven Threat Intelligence",
+    "description": "Zero-Day Prediction and Zero-Trust Implementation for proactive cybersecurity defense",
+    "startTrial": "Start Free Trial",
+    "learnMore": "Learn More"
+  },
+  "features": {
+    "title": "Key Features",
+    "zeroDayPrediction": {
+      "title": "Zero-Day Prediction",
+      "description": "Early detection of unknown threats using machine learning and anomaly detection"
+    },
+    "zeroTrust": {
+      "title": "Zero-Trust Architecture",
+      "description": "Continuous authentication and dynamic access control for enhanced security"
+    },
+    "realTime": {
+      "title": "Real-time Analytics",
+      "description": "Continuous monitoring and analysis of network behavior and potential threats"
+    }
+  },
+  "benefits": {
+    "title": "Benefits",
+    "fasterDetection": {
+      "title": "Faster Threat Detection",
+      "description": "Real-time analysis reduces response times and minimizes potential damage"
+    },
+    "improvedAccuracy": {
+      "title": "Improved Accuracy",
+      "description": "AI-driven analysis reduces false positives and enhances precision"
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "members": {
+      "manaf": {
+        "name": "Manaf Majid",
+        "role": "Lead Developer"
+      },
+      "reem": {
+        "name": "Reem Yasser",
+        "role": "Security Analyst"
+      },
+      "oumar": {
+        "name": "Oumar Dimnang",
+        "role": "AI Specialist"
+      },
+      "dana": {
+        "name": "Dana Yasser",
+        "role": "System Architect"
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Secure Your Network?",
+    "description": "Join organizations worldwide using Link for proactive cybersecurity defense",
+    "button": "Get Started Now"
+  }
+}
