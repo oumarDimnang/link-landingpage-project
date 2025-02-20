@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import React, { useState, useEffect } from "react";
 
 // Import translations directly
@@ -302,9 +303,11 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="max-w-4xl mx-auto text-center py-12 sm:py-16"
             >
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-200 to-purple-400 pt-4 pb-1">
-                {t.hero.title}
-              </h1>
+              <TextGenerateEffect
+                words={t.hero.title}
+                duration={1}
+                className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 pt-4 pb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-200 to-purple-400"
+              />
               <p className="text-xl sm:text-2xl text-purple-200 mb-8 sm:mb-10 max-w-2xl mx-auto">
                 {t.hero.description}
               </p>
