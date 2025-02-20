@@ -11,8 +11,8 @@ import {
   Globe,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import React, { useState, useEffect } from "react";
-import hackerPhoto from "../assets/image.jpg";
 
 // Import translations directly
 const translations = {
@@ -190,75 +190,24 @@ export default function Home() {
         }`}
       >
         {/* Hero Section */}
-        <header className="container mx-auto px-4 py-8 sm:py-16">
-          <nav className="flex justify-between items-center mb-8 sm:mb-16">
-            <div className="flex items-center space-x-2">
-              <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
-              <span className="text-xl sm:text-2xl font-bold">Link</span>
-            </div>
+        <BackgroundBeamsWithCollision className="bg-gradient-to-br from-[#1a1333] via-[#2a1758] to-[#5a1ccc]">
+          <header className="container mx-auto px-4 py-8 sm:py-16">
+            <nav className="flex justify-between items-center mb-8 sm:mb-16">
+              <div className="flex items-center space-x-2">
+                <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
+                <span className="text-xl sm:text-2xl font-bold">Link</span>
+              </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-white"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <Menu className="w-6 h-6" />
-            </button>
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden text-white"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <Menu className="w-6 h-6" />
+              </button>
 
-            {/* Desktop Navigation */}
-            <div className={`hidden md:flex gap-8`}>
-              <a
-                href="#features"
-                className="hover:text-purple-400 transition-colors"
-              >
-                {t.nav.features}
-              </a>
-              <a
-                href="#benefits"
-                className="hover:text-purple-400 transition-colors"
-              >
-                {t.nav.benefits}
-              </a>
-              <a
-                href="#team"
-                className="hover:text-purple-400 transition-colors"
-              >
-                {t.nav.team}
-              </a>
-            </div>
-
-            <div className={`hidden md:flex items-center gap-3`}>
-              <Button
-                variant="outline"
-                className="bg-purple-600 hover:bg-purple-700 text-white border-none"
-              >
-                {t.nav.getStarted}
-              </Button>
-
-              <Button
-                variant="outline"
-                className="bg-purple-900/50 text-white border-purple-400 hover:bg-purple-900/70"
-                onClick={toggleLanguage}
-              >
-                <Globe className="w-4 h-4 mr-2" />
-                {language === "en" ? "العربية" : "English"}
-              </Button>
-            </div>
-          </nav>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="md:hidden bg-purple-900/50 backdrop-blur-sm rounded-lg p-4 mb-8"
-            >
-              <div
-                className={`flex flex-col space-y-4 ${
-                  language === "ar" ? "text-right" : "text-left"
-                }`}
-              >
+              {/* Desktop Navigation */}
+              <div className={`hidden md:flex gap-8`}>
                 <a
                   href="#features"
                   className="hover:text-purple-400 transition-colors"
@@ -277,49 +226,102 @@ export default function Home() {
                 >
                   {t.nav.team}
                 </a>
+              </div>
+
+              <div className={`hidden md:flex items-center gap-3`}>
                 <Button
                   variant="outline"
-                  className="bg-purple-600 hover:bg-purple-700 text-white border-none w-full"
+                  className="bg-purple-600 hover:bg-purple-700 text-white border-none"
                 >
                   {t.nav.getStarted}
                 </Button>
+
                 <Button
                   variant="outline"
-                  className="bg-purple-900/50 text-white border-purple-400 hover:bg-purple-900/70 w-full"
+                  className="bg-purple-900/50 text-white border-purple-400 hover:bg-purple-900/70"
                   onClick={toggleLanguage}
                 >
                   <Globe className="w-4 h-4 mr-2" />
                   {language === "en" ? "العربية" : "English"}
                 </Button>
               </div>
-            </motion.div>
-          )}
+            </nav>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto text-center py-12 sm:py-16"
-          >
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-200 to-purple-400 pt-4 pb-1">
-              {t.hero.title}
-            </h1>
-            <p className="text-xl sm:text-2xl text-purple-200 mb-8 sm:mb-10 max-w-2xl mx-auto">
-              {t.hero.description}
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
-              <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-lg">
-                {t.hero.startTrial}
-              </Button>
-              <Button
-                variant="outline"
-                className="text-black hover:text-white border-purple-400 hover:bg-purple-900/50 w-full sm:w-auto text-lg"
+            {/* Mobile Menu */}
+            {isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="md:hidden bg-purple-900/50 backdrop-blur-sm rounded-lg p-4 mb-8"
               >
-                {t.hero.learnMore} <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
-          </motion.div>
-        </header>
+                <div
+                  className={`flex flex-col space-y-4 ${
+                    language === "ar" ? "text-right" : "text-left"
+                  }`}
+                >
+                  <a
+                    href="#features"
+                    className="hover:text-purple-400 transition-colors"
+                  >
+                    {t.nav.features}
+                  </a>
+                  <a
+                    href="#benefits"
+                    className="hover:text-purple-400 transition-colors"
+                  >
+                    {t.nav.benefits}
+                  </a>
+                  <a
+                    href="#team"
+                    className="hover:text-purple-400 transition-colors"
+                  >
+                    {t.nav.team}
+                  </a>
+                  <Button
+                    variant="outline"
+                    className="bg-purple-600 hover:bg-purple-700 text-white border-none w-full"
+                  >
+                    {t.nav.getStarted}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="bg-purple-900/50 text-white border-purple-400 hover:bg-purple-900/70 w-full"
+                    onClick={toggleLanguage}
+                  >
+                    <Globe className="w-4 h-4 mr-2" />
+                    {language === "en" ? "العربية" : "English"}
+                  </Button>
+                </div>
+              </motion.div>
+            )}
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mx-auto text-center py-12 sm:py-16"
+            >
+              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-200 to-purple-400 pt-4 pb-1">
+                {t.hero.title}
+              </h1>
+              <p className="text-xl sm:text-2xl text-purple-200 mb-8 sm:mb-10 max-w-2xl mx-auto">
+                {t.hero.description}
+              </p>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-lg">
+                  {t.hero.startTrial}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="text-black hover:text-white border-purple-400 hover:bg-purple-900/50 w-full sm:w-auto text-lg"
+                >
+                  {t.hero.learnMore} <ChevronRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+            </motion.div>
+          </header>
+        </BackgroundBeamsWithCollision>
 
         {/* Features Section */}
         <section
