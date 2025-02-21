@@ -56,15 +56,10 @@ const translations = {
     },
     benefits: {
       title: "Benefits",
-      fasterDetection: {
-        title: "Faster Threat Detection",
-        description:
-          "Real-time analysis reduces response times and minimizes potential damage",
-      },
       improvedAccuracy: {
-        title: "Improved Accuracy",
+        title: "Enhanced Precision with AI-Driven Analysis",
         description:
-          "AI-driven analysis reduces false positives and enhances precision",
+          "AI-driven analysis reduces false positives and boosts detection accuracy, ensuring reliable and actionable security alerts for a more efficient and effective defense.",
       },
       realTimeAnalysis: {
         title: "Seamless API Integration for Real-Time Analysis",
@@ -143,11 +138,6 @@ const translations = {
     },
     benefits: {
       title: "الفوائد",
-      fasterDetection: {
-        title: "كشف أسرع للتهديدات",
-        description:
-          "يقلل التحليل في الوقت الفعلي من أوقات الاستجابة ويقلل الضرر المحتمل",
-      },
       improvedAccuracy: {
         title: "دقة محسنة",
         description:
@@ -444,6 +434,88 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Benefits Section */}
+        <section id="benefits" className="py-12 sm:py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16">
+              {t.benefits.title}
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+              {/* Card 1: Improved Accuracy */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="bg-purple-900/20 p-6 rounded-lg shadow-lg"
+              >
+                <div className="bg-purple-500/20 p-3 rounded-lg w-fit">
+                  <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mt-4 mb-2">
+                  {t.benefits.improvedAccuracy.title}
+                </h3>
+                <p className="text-sm sm:text-base text-purple-200">
+                  {t.benefits.improvedAccuracy.description}
+                </p>
+              </motion.div>
+
+              {/* Card 2: Real-Time Analysis */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-purple-900/20 p-6 rounded-lg shadow-lg"
+              >
+                <div className="bg-purple-500/20 p-3 rounded-lg w-fit">
+                  <Timer className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mt-4 mb-2">
+                  {t.benefits.realTimeAnalysis.title}
+                </h3>
+                <p className="text-sm sm:text-base text-purple-200">
+                  {t.benefits.realTimeAnalysis.description}
+                </p>
+              </motion.div>
+
+              {/* Card 3: SANS SIRF */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="bg-purple-900/20 p-6 rounded-lg shadow-lg"
+              >
+                <div className="bg-purple-500/20 p-3 rounded-lg w-fit">
+                  <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mt-4 mb-2">
+                  {t.benefits.sansSIRF.title}
+                </h3>
+                <p className="text-sm sm:text-base text-purple-200">
+                  {t.benefits.sansSIRF.description}
+                </p>
+              </motion.div>
+
+              {/* Card 4: MITRE ATT&CK */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="bg-purple-900/20 p-6 rounded-lg shadow-lg"
+              >
+                <div className="bg-purple-500/20 p-3 rounded-lg w-fit">
+                  <Eye className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mt-4 mb-2">
+                  {t.benefits.mitreAttack.title}
+                </h3>
+                <p className="text-sm sm:text-base text-purple-200">
+                  {t.benefits.mitreAttack.description}
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Team Section */}
         <section id="team" className="py-12 sm:py-20">
           <div className="container mx-auto px-4">
@@ -500,101 +572,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section id="benefits" className="py-12 sm:py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16">
-              {t.benefits.title}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-6"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-500/20 p-3 rounded-lg">
-                    <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2">
-                      {t.benefits.fasterDetection.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-purple-200">
-                      {t.benefits.fasterDetection.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-500/20 p-3 rounded-lg">
-                    <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2">
-                      {t.benefits.improvedAccuracy.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-purple-200">
-                      {t.benefits.improvedAccuracy.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-500/20 p-3 rounded-lg">
-                    <Timer className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2">
-                      {t.benefits.realTimeAnalysis.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-purple-200">
-                      {t.benefits.realTimeAnalysis.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-500/20 p-3 rounded-lg">
-                    <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2">
-                      {t.benefits.sansSIRF.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-purple-200">
-                      {t.benefits.sansSIRF.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-500/20 p-3 rounded-lg">
-                    <Eye className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2">
-                      {t.benefits.mitreAttack.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-purple-200">
-                      {t.benefits.mitreAttack.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="relative mt-8 md:mt-0"
-              >
-                <img
-                  src="https://ut11.net/wp-content/uploads/2015/07/A25CB7156236imgpsh_fullsize_distr.jpg"
-                  alt="Security Benefits"
-                  className="rounded-lg shadow-2xl w-full"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="py-12 sm:py-20 bg-purple-600">
           <div className="container mx-auto px-4 text-center">
@@ -612,6 +589,15 @@ export default function Home() {
             </Button>
           </div>
         </section>
+
+        {/* Footer Section */}
+        <footer className="py-10 px-10">
+          <div>
+            <h1 className="sm:text-lg text-sm">
+              © 2025 HikmahAI. All rights reserved.
+            </h1>
+          </div>
+        </footer>
       </main>
     </React.Fragment>
   );
