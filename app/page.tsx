@@ -14,6 +14,9 @@ import {
   ShieldCheck,
   Eye,
   ThumbsUp,
+  Github,
+  Linkedin,
+  Mail,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
@@ -23,6 +26,7 @@ import oumar from "../assets/teampictures/oumarDimnang.png";
 import reem from "../assets/teampictures/reemYasser.jpg";
 import dana from "../assets/teampictures/danaYasser.jpg";
 import manaf from "../assets/teampictures/manafMajid.jpeg";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 // Import translations directly
 const translations = {
@@ -87,18 +91,28 @@ const translations = {
         manaf: {
           name: "Manaf Majid",
           role: "Cybersecurity Specialist",
+          linkedin: "https://www.linkedin.com/in/manaf-majid-722352272/",
+
+          email: "manafmajid992@gmail.com",
         },
         reem: {
           name: "Reem Yasser",
           role: "Software Engineer",
+          linkedin: "https://www.linkedin.com/in/reem-al-abbar-064965334/",
+          email: "reem.alabbar22@gmail.com",
         },
         oumar: {
           name: "Oumar Dimnang",
           role: "Software Engineer",
+          linkedin: "https://www.linkedin.com/in/oumar-dimnang-05243325b/",
+          github: "https://github.com/oumarDimnang",
+          email: "oumar.dimnang@gmail.com",
         },
         dana: {
           name: "Dana Yasser",
           role: "Software Engineer",
+          linkedin: "https://www.linkedin.com/in/dana-alabbar-695178339/",
+          email: "danaalabbar911@gmail.com",
         },
       },
     },
@@ -169,18 +183,28 @@ const translations = {
         manaf: {
           name: "مناف ماجد",
           role: "أخصائي أمن سيبراني",
+          linkedin: "https://www.linkedin.com/in/manaf-majid-722352272/",
+
+          email: "manafmajid992@gmail.com",
         },
         reem: {
           name: "ريم ياسر",
           role: "مهندسة برمجيات",
+          linkedin: "https://www.linkedin.com/in/reem-al-abbar-064965334/",
+          email: "reem.alabbar22@gmail.com",
         },
         oumar: {
           name: "عمر دمنانج",
           role: "مهندس برمجيات",
+          linkedin: "https://www.linkedin.com/in/oumar-dimnang-05243325b/",
+          github: "https://github.com/oumarDimnang",
+          email: "oumar.dimnang@gmail.com",
         },
         dana: {
           name: "دانا ياسر",
           role: "مهندسة برمجيات",
+          linkedin: "https://www.linkedin.com/in/dana-alabbar-695178339/",
+          email: "danaalabbar911@gmail.com",
         },
       },
     },
@@ -192,33 +216,6 @@ const translations = {
     },
   },
 };
-
-const testimonials = [
-  {
-    quote: "Hello",
-    name: "Manaf Majid",
-    designation: "Cybersecurity Specialist",
-    src: "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
-  },
-  {
-    quote: "Hello",
-    name: "Reem Yasser",
-    designation: "Cybersecurity Specialist",
-    src: "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
-  },
-  {
-    quote: "Hello",
-    name: "Oumar Dimnang",
-    designation: "Cybersecurity Specialist",
-    src: "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
-  },
-  {
-    quote: "Hello",
-    name: "Dana Yasser",
-    designation: "Cybersecurity Specialist",
-    src: "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
-  },
-];
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -286,12 +283,14 @@ export default function Home() {
               </div>
 
               <div className="hidden md:flex items-center gap-3">
-                <Button
-                  variant="outline"
-                  className="bg-purple-600 hover:bg-purple-700 text-white border-none"
-                >
-                  {t.nav.getStarted}
-                </Button>
+                <a href="#contact">
+                  <Button
+                    variant="outline"
+                    className="bg-purple-600 hover:bg-purple-700 text-white border-none"
+                  >
+                    {t.nav.getStarted}
+                  </Button>
+                </a>
 
                 <Button
                   variant="outline"
@@ -335,12 +334,15 @@ export default function Home() {
                   >
                     {t.nav.team}
                   </a>
-                  <Button
-                    variant="outline"
-                    className="bg-purple-600 hover:bg-purple-700 text-white border-none w-full"
-                  >
-                    {t.nav.getStarted}
-                  </Button>
+                  <a href="#contact">
+                    <Button
+                      variant="outline"
+                      className="bg-purple-600 hover:bg-purple-700 text-white border-none w-full"
+                    >
+                      {t.nav.getStarted}
+                    </Button>
+                  </a>
+
                   <Button
                     variant="outline"
                     className="bg-purple-900/50 text-white border-purple-400 hover:bg-purple-900/70 w-full"
@@ -371,15 +373,20 @@ export default function Home() {
                 {t.hero.description}
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
-                <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-lg">
-                  {t.hero.startTrial}
-                </Button>
-                <Button
-                  variant="outline"
-                  className="text-black hover:text-white border-purple-400 hover:bg-purple-900/50 w-full sm:w-auto text-lg"
-                >
-                  {t.hero.learnMore} <ChevronRight className="ml-2 w-5 h-5" />
-                </Button>
+                <a href="#contact">
+                  <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-lg">
+                    {t.hero.startTrial}
+                  </Button>
+                </a>
+
+                <a href="#features">
+                  <Button
+                    variant="outline"
+                    className="text-black hover:text-white border-purple-400 hover:bg-purple-900/50 w-full sm:w-auto text-lg"
+                  >
+                    {t.hero.learnMore} <ChevronRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -533,21 +540,31 @@ export default function Home() {
                   name: t.team.members.manaf.name,
                   role: t.team.members.manaf.role,
                   image: `${manaf.src}`,
+                  linkedin: t.team.members.manaf.linkedin,
+                  email: t.team.members.manaf.email,
                 },
                 {
                   name: t.team.members.reem.name,
                   role: t.team.members.reem.role,
                   image: `${reem.src}`,
+                  linkedin: t.team.members.reem.linkedin,
+                  email: t.team.members.reem.email,
                 },
                 {
                   name: t.team.members.oumar.name,
                   role: t.team.members.oumar.role,
                   image: `${oumar.src}`,
+                  linkedin: t.team.members.oumar.linkedin,
+                  github: t.team.members.oumar.github,
+                  email: t.team.members.oumar.email,
                 },
                 {
                   name: t.team.members.dana.name,
                   role: t.team.members.dana.role,
                   image: `${dana.src}`,
+                  linkedin: t.team.members.dana.linkedin,
+
+                  email: t.team.members.dana.email,
                 },
               ].map((member, index) => (
                 <motion.div
@@ -566,6 +583,24 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">{member.name}</h3>
                   <p className="text-purple-200">{member.role}</p>
+                  {/* Social Media Icons */}
+                  <div className="flex justify-center gap-4 pt-4">
+                    <a href={member.github} target="_blank">
+                      <button className="p-2 hover:bg-purple-800 rounded-full transition-colors">
+                        <IconBrandGithub className="w-5 h-5" />
+                      </button>
+                    </a>
+                    <a href={member.linkedin} target="_blank">
+                      <button className="p-2 hover:bg-purple-800 rounded-full transition-colors">
+                        <Linkedin className="w-5 h-5" />
+                      </button>
+                    </a>
+                    <a href={`mailto:${member.email}`} target="_blank">
+                      <button className="p-2 hover:bg-purple-800 rounded-full transition-colors">
+                        <Mail className="w-5 h-5" />
+                      </button>
+                    </a>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -573,7 +608,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-12 sm:py-20 bg-purple-600">
+        <section id="contact" className="py-12 sm:py-20 bg-purple-600">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-8">
               {t.cta.title}
