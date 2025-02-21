@@ -19,6 +19,10 @@ import { Button } from "@/components/ui/button";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import React, { useState, useEffect } from "react";
+import oumar from "../assets/teampictures/oumarDimnang.png";
+import reem from "../assets/teampictures/reemYasser.jpg";
+import dana from "../assets/teampictures/danaYasser.jpg";
+import manaf from "../assets/teampictures/manafMajid.jpeg";
 
 // Import translations directly
 const translations = {
@@ -164,19 +168,19 @@ const translations = {
       members: {
         manaf: {
           name: "مناف ماجد",
-          role: "مطور رئيسي",
+          role: "أخصائي أمن سيبراني",
         },
         reem: {
           name: "ريم ياسر",
-          role: "محللة أمنية",
+          role: "مهندسة برمجيات",
         },
         oumar: {
-          name: "عمر ديمنانج",
-          role: "متخصص الذكاء الاصطناعي",
+          name: "عمر دمنانج",
+          role: "مهندس برمجيات",
         },
         dana: {
           name: "دانا ياسر",
-          role: "مهندسة النظام",
+          role: "مهندسة برمجيات",
         },
       },
     },
@@ -248,7 +252,7 @@ export default function Home() {
             <nav className="flex justify-between items-center">
               <div className="flex items-center space-x-2">
                 <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
-                <span className="text-xl sm:text-2xl font-bold">Link</span>
+                <span className="text-xl sm:text-2xl font-bold">LINK</span>
               </div>
 
               {/* Mobile Menu Button */}
@@ -528,26 +532,22 @@ export default function Home() {
                 {
                   name: t.team.members.manaf.name,
                   role: t.team.members.manaf.role,
-                  image:
-                    "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
+                  image: `${manaf.src}`,
                 },
                 {
                   name: t.team.members.reem.name,
                   role: t.team.members.reem.role,
-                  image:
-                    "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
+                  image: `${reem.src}`,
                 },
                 {
                   name: t.team.members.oumar.name,
                   role: t.team.members.oumar.role,
-                  image:
-                    "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
+                  image: `${oumar.src}`,
                 },
                 {
                   name: t.team.members.dana.name,
                   role: t.team.members.dana.role,
-                  image:
-                    "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
+                  image: `${dana.src}`,
                 },
               ].map((member, index) => (
                 <motion.div
@@ -594,7 +594,7 @@ export default function Home() {
         <footer className="py-10 px-10">
           <div>
             <h1 className="sm:text-lg text-sm">
-              © 2025 HikmahAI. All rights reserved.
+              © 2025 Link. All rights reserved.
             </h1>
           </div>
         </footer>
