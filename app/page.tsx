@@ -17,6 +17,8 @@ import {
   Github,
   Linkedin,
   Mail,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
@@ -117,23 +119,25 @@ const translations = {
       },
     },
     cta: {
-      title: "Ready to Secure Your Network?",
+      header: "Are you ready?",
+      title: "They plan. We predict. Let’s end the war before it starts!",
       description: "Join us and use Link for proactive cybersecurity defense",
       button: "Contact Us",
     },
+    footer: "© 2025 Link. All rights reserved.",
   },
   ar: {
     nav: {
       features: "المميزات",
       benefits: "الفوائد",
       team: "الفريق",
-      getStarted: "ابدأ الآن",
+      getStarted: "اتصل بنا",
     },
     hero: {
       title: "ذكاء اصطناعي للأمن السيبراني",
       description:
         "التنبؤ بالتهديدات الصفرية وتنفيذ الثقة الصفرية للدفاع الاستباقي",
-      startTrial: "ابدأ النسخة التجريبية",
+      startTrial: "اتصل بنا",
       learnMore: "اعرف المزيد",
     },
     features: {
@@ -209,11 +213,13 @@ const translations = {
       },
     },
     cta: {
-      title: "هل أنت مستعد لتأمين شبكتك؟",
+      header: "هل أنت مستعد؟",
+      title: "إنهم يخططون. نحن نتوقع. لنُنهي الحرب قبل أن تبدأ!",
       description:
         "انضم إلى المؤسسات حول العالم التي تستخدم Link للدفاع الأمني الاستباقي",
-      button: "ابدأ الآن",
+      button: "اتصل بنا",
     },
+    footer: "© 2025 Link. جميع الحقوق محفوظة.",
   },
 };
 
@@ -608,29 +614,51 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-12 sm:py-20 bg-purple-600">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-8">
-              {t.cta.title}
-            </h2>
-            <p className="text-base sm:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">
-              {t.cta.description}
-            </p>
-            <Button
-              size="lg"
-              className="bg-white text-purple-600 hover:bg-purple-50 w-full sm:w-auto"
-            >
-              {t.cta.button}
-            </Button>
+        <section id="contact" className="relative overflow-hidden">
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900"></div>
+
+          {/* Decorative elements */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-white"></div>
+            <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-white"></div>
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-white"></div>
+          </div>
+
+          <div className="relative container mx-auto px-4 py-16 sm:py-24">
+            <div className="max-w-3xl mx-auto text-center text-white">
+              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 mb-6">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-medium">{t.cta.header}</span>
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200">
+                {t.cta.title}
+              </h2>
+
+              <p className="text-lg sm:text-xl mb-8 text-purple-100 leading-relaxed">
+                {t.cta.description}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href={`mailto:${t.team.members.manaf.email}`}
+                  target="_blank"
+                >
+                  <button className="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 rounded-full font-semibold text-lg hover:bg-purple-50 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
+                    {t.cta.button}
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Footer Section */}
         <footer className="py-10 px-10">
           <div>
-            <h1 className="sm:text-lg text-sm">
-              © 2025 Link. All rights reserved.
-            </h1>
+            <h1 className="sm:text-lg text-sm">{t.footer}</h1>
           </div>
         </footer>
       </main>
