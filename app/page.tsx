@@ -9,12 +9,16 @@ import {
   ChevronRight,
   Menu,
   Globe,
+  Brain,
+  Timer,
+  ShieldCheck,
+  Eye,
+  ThumbsUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import React, { useState, useEffect } from "react";
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 // Import translations directly
 const translations = {
@@ -61,6 +65,21 @@ const translations = {
         title: "Improved Accuracy",
         description:
           "AI-driven analysis reduces false positives and enhances precision",
+      },
+      realTimeAnalysis: {
+        title: "Seamless API Integration for Real-Time Analysis",
+        description:
+          "Our solution effortlessly integrates with existing systems via APIs, enabling real-time threat detection and response without disrupting your workflow.",
+      },
+      sansSIRF: {
+        title: "Intelligent Incident Response Aligned with SANS SIRF",
+        description:
+          "We automate incident response using the SANS Incident Response Framework (SIRF), ensuring swift, strategic, and effective mitigation of security threats.",
+      },
+      mitreAttack: {
+        title: "Advanced Threat Detection with MITRE ATT&CK",
+        description:
+          "Leveraging MITRE ATT&CK, our system identifies and analyzes historical attack patterns and TTPs (Tactics, Techniques, and Procedures) to proactively defend against emerging threats.",
       },
     },
     team: {
@@ -133,6 +152,21 @@ const translations = {
         title: "دقة محسنة",
         description:
           "يقلل التحليل المدعوم بالذكاء الاصطناعي من النتائج الإيجابية الخاطئة",
+      },
+      realTimeAnalysis: {
+        title: "تكامل سلس لواجهة برمجة التطبيقات للتحليل في الوقت الفعلي",
+        description:
+          "يتيح حلّنا التكامل السهل مع الأنظمة الحالية عبر واجهات برمجة التطبيقات، مما يمكّن من اكتشاف التهديدات والاستجابة لها في الوقت الفعلي دون تعطيل سير العمل.",
+      },
+      sansSIRF: {
+        title: "استجابة ذكية للحوادث متوافقة مع إطار SANS SIRF",
+        description:
+          "نقوم بأتمتة استجابة الحوادث باستخدام إطار عمل الاستجابة للحوادث SANS SIRF، مما يضمن تخفيف التهديدات الأمنية بسرعة وفعالية وبطريقة استراتيجية.",
+      },
+      mitreAttack: {
+        title: "اكتشاف متقدم للتهديدات باستخدام MITRE ATT&CK",
+        description:
+          "باستخدام MITRE ATT&CK، يحدد نظامنا أنماط الهجمات السابقة ويحلل التكتيكات والتقنيات والإجراءات (TTPs) للدفاع الاستباقي ضد التهديدات الناشئة.",
       },
     },
     team: {
@@ -481,7 +515,7 @@ export default function Home() {
               >
                 <div className="flex items-start space-x-4">
                   <div className="bg-purple-500/20 p-3 rounded-lg">
-                    <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                    <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
                   </div>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold mb-2">
@@ -494,7 +528,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="bg-purple-500/20 p-3 rounded-lg">
-                    <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                    <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
                   </div>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold mb-2">
@@ -502,6 +536,45 @@ export default function Home() {
                     </h3>
                     <p className="text-sm sm:text-base text-purple-200">
                       {t.benefits.improvedAccuracy.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="bg-purple-500/20 p-3 rounded-lg">
+                    <Timer className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold mb-2">
+                      {t.benefits.realTimeAnalysis.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-purple-200">
+                      {t.benefits.realTimeAnalysis.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="bg-purple-500/20 p-3 rounded-lg">
+                    <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold mb-2">
+                      {t.benefits.sansSIRF.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-purple-200">
+                      {t.benefits.sansSIRF.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="bg-purple-500/20 p-3 rounded-lg">
+                    <Eye className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold mb-2">
+                      {t.benefits.mitreAttack.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-purple-200">
+                      {t.benefits.mitreAttack.description}
                     </p>
                   </div>
                 </div>
@@ -513,7 +586,7 @@ export default function Home() {
                 className="relative mt-8 md:mt-0"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80"
+                  src="https://ut11.net/wp-content/uploads/2015/07/A25CB7156236imgpsh_fullsize_distr.jpg"
                   alt="Security Benefits"
                   className="rounded-lg shadow-2xl w-full"
                 />
