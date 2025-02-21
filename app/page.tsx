@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import React, { useState, useEffect } from "react";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 // Import translations directly
 const translations = {
@@ -164,6 +165,33 @@ const translations = {
   },
 };
 
+const testimonials = [
+  {
+    quote: "Hello",
+    name: "Manaf Majid",
+    designation: "Cybersecurity Specialist",
+    src: "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
+  },
+  {
+    quote: "Hello",
+    name: "Reem Yasser",
+    designation: "Cybersecurity Specialist",
+    src: "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
+  },
+  {
+    quote: "Hello",
+    name: "Oumar Dimnang",
+    designation: "Cybersecurity Specialist",
+    src: "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
+  },
+  {
+    quote: "Hello",
+    name: "Dana Yasser",
+    designation: "Cybersecurity Specialist",
+    src: "https://cdn.vectorstock.com/i/1000v/22/59/silhouette-a-hacker-in-hood-with-binary-code-vector-33562259.jpg",
+  },
+];
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState("en");
@@ -190,10 +218,10 @@ export default function Home() {
           language === "ar" ? "rtl" : "ltr"
         }`}
       >
-        {/* Hero Section */}
-        <BackgroundBeamsWithCollision className="bg-gradient-to-br from-[#1a1333] via-[#2a1758] to-[#5a1ccc]">
-          <header className="container mx-auto px-4 py-8 sm:py-16">
-            <nav className="flex justify-between items-center mb-8 sm:mb-16">
+        <BackgroundBeamsWithCollision className="bg-gradient-to-br from-[#1a1333] via-[#2a1758] to-[#5a1ccc] min-h-screen flex flex-col">
+          {/* Navbar */}
+          <header className="container mx-auto px-4 pt-8">
+            <nav className="flex justify-between items-center">
               <div className="flex items-center space-x-2">
                 <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
                 <span className="text-xl sm:text-2xl font-bold">Link</span>
@@ -208,7 +236,7 @@ export default function Home() {
               </button>
 
               {/* Desktop Navigation */}
-              <div className={`hidden md:flex gap-8`}>
+              <div className="hidden md:flex gap-8">
                 <a
                   href="#features"
                   className="hover:text-purple-400 transition-colors"
@@ -229,7 +257,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className={`hidden md:flex items-center gap-3`}>
+              <div className="hidden md:flex items-center gap-3">
                 <Button
                   variant="outline"
                   className="bg-purple-600 hover:bg-purple-700 text-white border-none"
@@ -254,7 +282,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="md:hidden bg-purple-900/50 backdrop-blur-sm rounded-lg p-4 mb-8"
+                className="md:hidden bg-purple-900/50 backdrop-blur-sm rounded-lg p-4 mt-4"
               >
                 <div
                   className={`flex flex-col space-y-4 ${
@@ -296,12 +324,15 @@ export default function Home() {
                 </div>
               </motion.div>
             )}
+          </header>
 
+          {/* Hero Section */}
+          <div className="flex-1 flex items-center justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="max-w-4xl mx-auto text-center py-12 sm:py-16"
+              className="max-w-4xl mx-auto text-center px-4"
             >
               <TextGenerateEffect
                 words={t.hero.title}
@@ -323,7 +354,7 @@ export default function Home() {
                 </Button>
               </div>
             </motion.div>
-          </header>
+          </div>
         </BackgroundBeamsWithCollision>
 
         {/* Features Section */}
@@ -385,6 +416,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16">
               {t.team.title}
             </h2>
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
